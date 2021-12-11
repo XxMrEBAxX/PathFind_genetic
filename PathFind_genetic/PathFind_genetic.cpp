@@ -6,6 +6,14 @@ using namespace std;
 
 int main()
 {
+    /*
+        [ 길찾기를 수행하는 유전 알고리즘의 한계 ]
+        유전 알고리즘은 우성 형질이 많이 살아남는다는 성질을 가지고 있다.
+        즉, 최종 목적지 거리가 가깝게 도달한 크로모좀만 선택될 가능성이 크다.
+        이것이 문제이다. 최종 목적지와 가깝게 도달할 경우에서 벽을 만났을 때, 절대 돌아서서 갈 생각을 하지 않는다.
+        아무리 돌연변이가 발생한다 한들 벽을 돌아서게 되면 적합도가 낮아지므로 무조건 도태당할 수 밖에 없다.
+        따라서 어느 세대를 거쳐도 벽을 돌아서지 않고 계속 벽에서만 부딪히는 세대만이 살아남는다.
+    */
     POSITION start = POSITION(13, 29);
     POSITION end = POSITION(12, 1);
     //POSITION start = POSITION(13, 29);
@@ -71,4 +79,6 @@ int main()
     cout << "(Selected Best) ";
     bestChrom.draw();
     bestChrom.getPacMap().DrawMap();
+
+    getchar();
 }
